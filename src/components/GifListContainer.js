@@ -9,10 +9,10 @@ const GifListContainer = () => {
     const apiKey='1iwYJT1yONNHCIeXGdp7ZHi5KcGBZKYx';
 
     useEffect(()=>{
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}&rating=g&limit=3`)
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${apiKey}&rating=g`)
         .then((res)=>res.json())
         .then(({data})=>{
-            const gifs = data.map((gif) => ({ url: gif.images.original.url }));
+            const gifs = data.slice(0,3).map((gif) => ({ url: gif.images.original.url }));
             setGif(gifs);
         })
     
