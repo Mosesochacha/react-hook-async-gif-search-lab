@@ -20,8 +20,8 @@ const GifListContainer = () => {
 
 
   return (
-    <div>
-     <GifList gifs={gif} />
+    <div style={{display:'flex',justifyContent:'space-around'}}>
+     <GifList  gifs={gif} />
       <GifSearch onSubmitQuery={setSearch} />
     </div>
   )
