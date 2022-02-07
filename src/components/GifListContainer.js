@@ -14,6 +14,7 @@ const GifListContainer = () => {
         .then(({data})=>{
             const gifs = data.slice(0,3).map((gif) => ({ url: gif.images.original.url }));
             setGif(gifs);
+            
         })
     
     },[search])
